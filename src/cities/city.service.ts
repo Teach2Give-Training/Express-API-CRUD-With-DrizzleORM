@@ -4,7 +4,7 @@ import db from "../drizzle/db";
 import { cityTable, TCityInsert, TCitySelect } from "../drizzle/schema";
 
 
-//CRUD Operations for Cities entity
+//CRUD Operations for City entity
 
 //Get all citys
 export const getCitysServices = async():Promise<TCitySelect[] | null> => {
