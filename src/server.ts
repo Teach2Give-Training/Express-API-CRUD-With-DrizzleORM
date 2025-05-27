@@ -2,6 +2,8 @@ import express, { Application,Response } from 'express';
 import dotenv from 'dotenv';
 import { logger } from './middleware/logger';
 import { userRouter } from './users/user.routes';
+import { cityRouter } from './cities/city.routes';
+import { stateRouter } from './state/state.routes';
 
 dotenv.config();
 
@@ -21,6 +23,8 @@ app.get('/', (req, res:Response) => {
 
 // Importing user routes
 app.use('/api',userRouter)
+app.use('/api',cityRouter)
+app.use('/api',stateRouter)
 
 const PORT = process.env.PORT || 5000;
 

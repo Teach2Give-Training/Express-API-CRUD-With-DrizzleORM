@@ -6,10 +6,6 @@ import { TUserInsert, TUserSelect, userTable } from "../drizzle/schema";
 
 //CRUD Operations for User entity
 
-
-
-
-
 //Get all users
 export const getUsersServices = async():Promise<TUserSelect[] | null> => {
     return await db.query.userTable.findMany({});
@@ -39,5 +35,5 @@ export const updateUserServices = async(userId: number, user: Partial<TUserInser
 
 export const deleteUserServices = async(userId: number):Promise<string> => {
   await db.delete(userTable).where(eq(userTable.userId, userId));
-  return "Blog deleted successfully 🎉"
+  return "User deleted successfully 🎉"
 }
